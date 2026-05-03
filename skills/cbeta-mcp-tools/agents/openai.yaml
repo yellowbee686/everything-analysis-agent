@@ -1,4 +1,0 @@
-interface:
-  display_name: "CBETA MCP Tools"
-  short_description: "Use CBETA MCP tools for Buddhist scripture search and citation."
-  default_prompt: "Search CBETA scriptures, retrieve source text, and cite work metadata."

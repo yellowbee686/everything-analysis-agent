@@ -20,6 +20,8 @@ Use Semantic Scholar as the default live academic search source. Prefer the bund
 
 ## Commands
 
+On Windows, follow the current agent environment. Use WSL2 if the agent is already in WSL2; otherwise native Windows Python is fine for this skill.
+
 Search papers:
 
 ```bash

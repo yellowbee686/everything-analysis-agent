@@ -1,9 +1,9 @@
 ---
-name: cbeta-mcp-tools
+name: cbeta-research
 description: Use the CBETA MCP server for Chinese Buddhist scripture search, catalog lookup, metadata retrieval, KWIC inspection, and source-text citation. Use when Codex needs live CBETA queries, Buddhist canon text lookup, work/juan/linehead citation, translator or dynasty searches, or CBETA MCP tool guidance.
 ---
 
-# CBETA MCP Tools
+# CBETA Research
 
 ## Overview
 
@@ -16,24 +16,45 @@ Do not start the MCP server when the skill is loaded. Start it only when the use
 1. Check the endpoint first:
 
 ```bash
-python3 skills/cbeta-mcp-tools/scripts/check_server.py --url http://localhost:18765/mcp/
+python3 skills/cbeta-research/scripts/check_server.py --url http://localhost:18765/mcp/
 ```
 
 2. If unavailable, start on demand:
 
 ```bash
-skills/cbeta-mcp-tools/scripts/start_server.sh
+skills/cbeta-research/scripts/start_server.sh
 ```
 
 When running inside an agent shell that cleans up background processes, keep the server in a long-running foreground session:
 
 ```bash
-CBETA_MCP_FOREGROUND=1 skills/cbeta-mcp-tools/scripts/start_server.sh
+CBETA_MCP_FOREGROUND=1 skills/cbeta-research/scripts/start_server.sh
 ```
 
 3. Re-run the check. If it still fails, report dependency, port, or server-log diagnostics.
 
 The default MCP endpoint is `http://localhost:18765/mcp/`.
+
+## Windows Preference
+
+On Windows, prefer running CBETA MCP commands inside WSL2. Fall back to PowerShell only when WSL2 is unavailable or the user explicitly asks for native Windows execution.
+
+- If the agent is already running in WSL2, use the normal Linux commands above.
+- If the agent is running in native Windows PowerShell or CMD and WSL2 is available, run Linux commands through `wsl.exe -- bash -lc`.
+- If WSL2 is unavailable, use `scripts\start_server.ps1` from PowerShell.
+- Convert Windows paths such as `C:\Users\name\repo` to WSL paths such as `/mnt/c/Users/name/repo` before calling Linux scripts.
+
+Example from native Windows:
+
+```powershell
+wsl.exe -- bash -lc 'cd /mnt/c/path/to/everything-analysis-agent && skills/cbeta-research/scripts/start_server.sh'
+```
+
+Fallback from native PowerShell:
+
+```powershell
+.\skills\cbeta-research\scripts\start_server.ps1
+```
 
 ## Query Workflow
 

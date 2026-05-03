@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
 SERVER_DIR="${ROOT_DIR}/mcp_servers/CbetaMCP"
-CHECK_SCRIPT="${ROOT_DIR}/skills/cbeta-mcp-tools/scripts/check_server.py"
+CHECK_SCRIPT="${ROOT_DIR}/skills/cbeta-research/scripts/check_server.py"
 URL="${CBETA_MCP_URL:-http://localhost:18765/mcp/}"
 PORT="${APP_PORT:-18765}"
 LOG_FILE="${CBETA_MCP_LOG:-/tmp/cbeta-mcp.log}"
