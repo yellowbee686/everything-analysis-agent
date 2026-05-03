@@ -14,6 +14,12 @@
 
 This repository stores analysis-agent assets such as skills, plugins, and MCP integrations.
 
+## Docs
+
+- Research and design notes live under `docs/`.
+- When the target reader is Chinese, `docs/` research notes may be written in Chinese.
+- Include the investigation date and source references for comparative or external research notes.
+
 ## Skills
 
 - Skills live under `skills/<skill-name>/`.
