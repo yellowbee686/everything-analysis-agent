@@ -1,0 +1,4 @@
+interface:
+  display_name: "Academic Search"
+  short_description: "Search and summarize academic papers with Semantic Scholar."
+  default_prompt: "Search academic papers and summarize the most relevant results."
