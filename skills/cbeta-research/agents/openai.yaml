@@ -1,0 +1,4 @@
+interface:
+  display_name: "CBETA Research"
+  short_description: "Research CBETA scriptures with source-text lookup and citation."
+  default_prompt: "Search CBETA scriptures, retrieve source text, and cite work metadata."

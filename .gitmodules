@@ -1,0 +1,3 @@
+[submodule "mcp_servers/CbetaMCP"]
+	path = mcp_servers/CbetaMCP
+	url = https://github.com/yellowbee686/CbetaMCP.git
