@@ -40,8 +40,13 @@ function Resolve-Python {
 function Test-Server {
     param([string]$PythonBin)
 
-    & $PythonBin $CheckScript --url $Url *> $null
-    return $LASTEXITCODE -eq 0
+    try {
+        & $PythonBin $CheckScript --url $Url *> $null
+        return $LASTEXITCODE -eq 0
+    }
+    catch {
+        return $false
+    }
 }
 
 function Test-Dependencies {
