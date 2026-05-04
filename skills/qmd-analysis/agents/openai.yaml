@@ -1,0 +1,3 @@
+display_name: QMD Analysis
+short_description: Search the local analysis-md corpus and return clickable file links.
+default_prompt: Search the analysis-md QMD index and return the most relevant local markdown files as clickable links.
